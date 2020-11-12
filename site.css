@@ -69,7 +69,7 @@ flex-wrap: wrap;
   text-align: justify;
 }
 .sectors img{
- 
+ max-width: 450px;
 }
 
 
