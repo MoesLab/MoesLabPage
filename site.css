@@ -14,7 +14,7 @@ body {
 .container{
   margin-left: auto;
   margin-right: auto;
-  max-width: 1024px;
+  max-width: 1000px;
 }
 
 header{
@@ -82,8 +82,8 @@ main {
 
 }
 article {
-  width: 93%; 
-  padding:2em;
+  width: 97%; 
+  padding:.5em;
 }
 
 footer {
