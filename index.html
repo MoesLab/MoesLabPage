@@ -3,10 +3,23 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="author" content="Moe Azizi">
+  <meta name="description" content="Moes Lab activities">
+  <meta name="keywords"
+    content="Moe, Moe Azizi, MoesLab, Moes Lab, Iot, ERB, Electric Roller Boots, Crestron, Savant, Control4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>MoesLab</title>
   <link rel="stylesheet" href="site.css" type="text/css" />
+  <script>
+    function Menu(item) {
+
+      document.getElementById();
+
+    }
+
+  </script>
+  <noscript>Sorry, your browser does not support JavaScript!</noscript>
   <style>
 
   </style>
@@ -16,24 +29,25 @@
   <div class="container">
     <header>
       <div class="head">
-        <img src="images/Moe Azizi BWL.jpg" title="My name is Moe Azizi "alt="Moe Azizi"
+        <img src="images/Moe Azizi BWL.jpg" title="My name is Moe Azizi " alt="Moe Azizi"
           style="width:150px;height:150px;border-radius:1em; align-items: left;" />
 
         <img src="images/MoesLab_Robot.gif" title="Welcome to Moes Lab" alt="API ICON" align="right" style="width:185px;height:150px;border-radius:1em; align-items: right;
               -webkit-filter: grayscale(100%); filter: grayscale(100%); " />
       </div>
       <nav>
-        <a href="#">HIGHLIGHTS</a>
-        <a href="#">DASHBOARD</a>
-        <a href="#">AUDIO/VISUAL</a>
-        <a href="#">ABOUT</a>
-        <a href="#">CONTACT</a>
+        <a href="#" onclick="Menu(1)">HIGHLIGHTS</a>
+        <a href="#" onclick="Menu(2)">DASHBOARD</a>
+        <a href="#" onclick="Menu(3)">AUDIO/VISUAL</a>
+        <a href="#" onclick="Menu(4)">ABOUT</a>
+        <a href="#" onclick="Menu(5)">CONTACT</a>
       </nav>
 
     </header>
     <main>
       <aside></aside>
-      <article class="HIGHLIGHTS">
+      <!-- -------------------------------------------- HIGHLIGHTS-->
+      <article id="HIGHLIGHTS">
         <section class="sectors">
           <h2>
             IoT Demo 2020
@@ -43,10 +57,11 @@
               Internet of Things is here now, they are all over the place,
               and new ones with more capabilities and speed showing up because the hardware is
               getting less expensive and can do more in a small package, we owe that to the
-              evolution of SoCs and availabilities of the cloud platforms. To understand and
+              evolution of <abbr title="System on a chip">SOC</abbr> and availabilities of the Cloud platforms. To
+              understand and
               get familiar with some of the aspects of this technology
               I have moved up my sleeves to create and program a bunch of them
-              and run them against multi-cloud platforms. I am presenting a demo
+              and run them against multi-Cloud platforms. I am presenting a demo
               of them in this Vlog.
             </p>
 
@@ -84,24 +99,57 @@
             <p>
               Since my childhood when I was buying, playing, and learning RC toys
               till now which my toys getting more serious and challenging,
-              I know that two things have been changed first the cost of them
+              I know that two things have been changed, first the cost of them,
               and second my abilities to make them. The following section will
               present some of my serious Robots (quad-copters, rovers, and boats)
               that are capable of finding and going through preplanned waypoints
               using today's technology that way I can take video and picture shots.
+              <br><br>
+              body: Carbon fiber<br>
+              controller: APM 2.6<br>
+              battery: 3 cells LiPoly 11.7 V, 50 A<br>
             </p>
             <div class="images">
-              <img width="460" height="300" src="images/Chuck001.JPG" alt="Chuck the angry bird">
-              <img width="460" height="300" src="images/Chuck002.JPG" alt="Chuck the angry bird">
-              <img width="460" height="300" src="images/Falcon001.jpg" alt="Falcon the fast bird">
-              <img width="460" height="300" src="images/Rover001.jpg" alt="Rover the land">
+              <figure>
+                <img width="460" height="300" src="images/Chuck001.JPG" alt="Chuck the angry bird">
+                <figcaption>Fig.1 - Chuck under construction </figcaption>
+              </figure>
+              <figure>
+                <img width="460" height="300" src="images/Chuck002.JPG" alt="Chuck the angry bird">
+                <figcaption>Fig.2 - Chuck under construction </figcaption>
+              </figure>
+              <figure>
+                <img width="460" height="300" src="images/Falcon001.jpg" alt="Falcon the fast bird">
+                <figcaption>Fig.3 - Falcon, construction finished </figcaption>
+              </figure>
+              <figure>
+                <img width="460" height="300" src="images/Rover001.jpg" alt="Rover the land">
+                <figcaption>Fig.4 - Rover M2, construction finished </figcaption>
+              </figure>
             </div>
             <!--<a href="mailto:azizimoe@gmail.com?Subject=E-mail" target="_blank">E-mail me</a> -->
           </fbox>
         </section>
       </article>
-    </main>
+      <!-- -------------------------------------------- DASHBOARD-->
+      <article id="DASHBOARD">
 
+      </article>
+      <!-- -------------------------------------------- AUDIO/VISUAL-->
+      <article id="AUDIO/VISUAL">
+
+      </article>
+      <!-- -------------------------------------------- ABOUT-->
+      <article id="ABOUT">
+
+      </article>
+      <!-- -------------------------------------------- CONTACT-->
+      <article id="CONTACT">
+
+      </article>
+
+
+    </main>
     <footer>
       <p>
         Contact me if you are looking for a person with maker attitude I am

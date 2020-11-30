@@ -41,34 +41,65 @@ nav a{
   padding-left: 8px;
   padding-right: 10px;
 }
+nav a:hover{
+  font-weight: bold;
+
+}
+nav a:active{
+  background-color:black;
+}
+
+#HIGHLIGHTS{
+  display: initial;
+}
+#DASHBOARD{
+  display: none;
+}
+#AUDIO/VISUAL{
+  display: none;
+}
+#ABOUT{
+  display: none;
+}
+#CONTACT{
+  display: none;
+}
+
 h1 {
   font-size: 3em;
   margin-top: 0.5em;
 }
 
 .sectors{
-  margin-bottom: 1.5em;
+  margin-left: .5em;
+  margin-right: .5em;
+  margin-bottom: 3em;
   border-bottom: groove;
 }
 
 .sectors h2{
   color:black;
   background-color: rgba(255, 20, 145, 0.397);
+  padding-left:.5em ;
 }
 .sectors p{
+  background-color: rgba(231, 220, 220, 0.603);
 max-width: 482px;
 font-weight: bolder;
+font-size: medium;
+padding-top: .5em;
+padding-bottom: 1em;
+padding-left: .5em;
+padding-right: .5em;
+text-align: justify;
 }
 .sectors fbox{
 display:flex;
 flex-wrap: wrap;
 }
-.sectors p{
-  font-size: medium;
-  margin-right: .5em;
-  text-align: justify;
-}
-.sectors div .images{
+
+.sectors div .images:hover{
+
 
 }
 
