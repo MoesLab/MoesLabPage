@@ -13,9 +13,21 @@
   <link rel="stylesheet" href="site.css" type="text/css" />
   <script>
     function Menu(item) {
+      var M;
+      MenuHid();
+      if (item == 1) { document.getElementById("HIGHLIGHTS").style.display = "inline"; }
+      if (item == 2) { document.getElementById("DASHBOARD").style.display = "inline"; }
+      if (item == 3) { document.getElementById("AUDIO/VISUAL").style.display = "inline"; }
+      if (item == 4) { document.getElementById("ABOUT").style.display = "inline"; }
+      if (item == 5) { document.getElementById("CONTACT").style.display = "inline"; }
 
-      document.getElementById();
-
+    }
+    function MenuHid() {
+      document.getElementById("HIGHLIGHTS").style.display = "none";
+      document.getElementById("DASHBOARD").style.display = "none";
+      document.getElementById("AUDIO/VISUAL").style.display = "none";
+      document.getElementById("ABOUT").style.display = "none";
+      document.getElementById("CONTACT").style.display = "none";
     }
 
   </script>
@@ -47,7 +59,7 @@
     <main>
       <aside></aside>
       <!-- -------------------------------------------- HIGHLIGHTS-->
-      <article id="HIGHLIGHTS">
+      <article id="HIGHLIGHTS" style="display: inline;">
         <section class="sectors">
           <h2>
             IoT Demo 2020
@@ -132,20 +144,92 @@
         </section>
       </article>
       <!-- -------------------------------------------- DASHBOARD-->
-      <article id="DASHBOARD">
+      <article id="DASHBOARD" style="display: none;">
+        <section class="DASHBOARD.sector">
+          <h2 style="text-align: center;">
+            DASHBOARD page under construction
+          </h2>
+          <fbox>
+            <p style="background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em;">
+              <br>
+              <br>
+              <br>
+              It consists of data gauges that get updated from multi platform clouds
+              such as Azure, Cayanne
+            </p>
+
+          </fbox>
+
+        </section>
 
       </article>
       <!-- -------------------------------------------- AUDIO/VISUAL-->
-      <article id="AUDIO/VISUAL">
+      <article id="AUDIO/VISUAL" style="display: none;">
+        <section class="AUDIO/VISUAL.sector">
+          <h2 style="text-align: center;">
+            AUDIO/VISUAL page under construction
+          </h2>
+          <fbox>
+            <p style="text-align: center;">
+              <br>
+              <br>
+              <br>
+              <!--I am Moe Azizi,-->
+            </p>
 
+          </fbox>
+
+        </section>
       </article>
       <!-- -------------------------------------------- ABOUT-->
-      <article id="ABOUT">
+      <article id="ABOUT" style="display: none;">
+        <section class="ABOUT.sector">
+          <h2 style="text-align: center;">
+            ABOUT
+          </h2>
+          <fbox>
+            <p style="background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em;">
+              <br>
+              <br>
+              <br>
+              I am Moe Azizi and MoesLab is my playground and test bench for prototyping, testing, and manufacturing a
+              variety of components related to the world of Automation and Mechatronic.
 
+              I have extensive experience in a wide range of Software and Hardware design and development for IoT.
+
+              This domain hosted in Github to showcase some of the related activities.
+              These activities included but not limited to small scale low quantity PCB creation for different
+              applications with microprocessors and radio modules.
+
+              I never limit myself to any specific discipline in the science of Electronic, computers, and mechanics.
+
+              In this Lab, I am challenging myself by engaging in different fun projects.
+              I welcome clients and people who are on the same page as me, I value the technology and hoping my small
+              contributions help the community.
+            </p>
+
+          </fbox>
+
+        </section>
       </article>
       <!-- -------------------------------------------- CONTACT-->
-      <article id="CONTACT">
+      <article id="CONTACT" style="display: none;">
+        <section class="CONTACT.sector">
+          <h2 style="text-align: center;">
+            CONTACT
+          </h2>
+          <fbox>
+            <p style="text-align: center;">
+              <br>
+              <br>
+              <br>
+              <a href="mailto:azizimoe@gmail.com?Subject=E-mail" target="_blank" title="azizimoe@gmail.com">E-mail
+                me</a>
+            </p>
 
+          </fbox>
+
+        </section>
       </article>
 
 

@@ -7,7 +7,7 @@ html,body {
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #999;
 }
 
@@ -85,7 +85,7 @@ h1 {
 .sectors p{
   background-color: rgba(231, 220, 220, 0.603);
 max-width: 482px;
-font-weight: bolder;
+//font-weight: bolder;
 font-size: medium;
 padding-top: .5em;
 padding-bottom: 1em;
