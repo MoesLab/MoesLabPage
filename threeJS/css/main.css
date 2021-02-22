@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+/*no scroll bars
+*/
+
+canvas{
+    display: black;
+
+}

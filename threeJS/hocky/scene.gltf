@@ -1,0 +1,312 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 46606,
+      "max": [
+        1.5823999643325806,
+        0.86244899034500122,
+        -8.5758495330810547
+      ],
+      "min": [
+        -2.1222200393676758,
+        -1.1200300455093384,
+        -11.325900077819824
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 559272,
+      "componentType": 5126,
+      "count": 46606,
+      "max": [
+        0.99999487400054932,
+        0.99999892711639404,
+        0.99975740909576416
+      ],
+      "min": [
+        -0.99992108345031738,
+        -0.99998033046722412,
+        -0.99825084209442139
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 46606,
+      "max": [
+        0.99997001886367798,
+        0.99995893239974976,
+        0.99991071224212646,
+        1
+      ],
+      "min": [
+        -0.99992847442626953,
+        -0.99987733364105225,
+        -0.99954205751419067,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 46606,
+      "max": [
+        1,
+        0.98176497220993042
+      ],
+      "min": [
+        1.2999999853491317e-05,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 266346,
+      "max": [
+        46605
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "thesidekick (https://sketchfab.com/thesidekick)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/ice-hockey-skate-eb2f87f7efc74cfd91167bbf91be186b",
+      "title": "Ice Hockey Skate"
+    },
+    "generator": "Sketchfab-6.58.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1065384,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 372848,
+      "byteOffset": 1065384,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1118544,
+      "byteOffset": 1438232,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 745696,
+      "byteOffset": 2556776,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 3302472,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Hockey_Skate_retopo_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Hockey_Skate_retopo_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Hockey_Skate_retopo_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.25946969696969696,
+        0.25946969696969696,
+        0.25946969696969696
+      ],
+      "emissiveTexture": {
+        "index": 0,
+        "texCoord": 0
+      },
+      "name": "Hockey_Skate_retopo",
+      "normalTexture": {
+        "index": 2,
+        "scale": 0.54715909090909087,
+        "texCoord": 0
+      },
+      "occlusionTexture": {
+        "index": 1,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "metallicRoughnessTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Hockey_Skate_retopo_Hockey_Skate_retopo_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "IceHockey_Skate.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        30.253871360460295,
+        64.289126052582574,
+        -70.367688175041437,
+        0,
+        -89.992819871365299,
+        43.589108273926293,
+        1.1322594596338553,
+        0,
+        31.400569895397126,
+        62.983319351870357,
+        71.042995569891033,
+        0,
+        272.04376220703125,
+        798.1688232421875,
+        702.56243896484375,
+        1
+      ],
+      "name": "Hockey_Skate_retopo"
+    },
+    {
+      "mesh": 0,
+      "name": "Hockey_Skate_retopo_Hockey_Skate_retopo_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
+

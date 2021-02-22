@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+    <script src="three.js"></script>
+    <script type="module" src="GLTFLoader.js"></script>
+    <script type="module">
+        import { GLTFLoader } from "./GLTFLoader.js";
+
+        var scene, camera, renderer, controls, text, light, loader, obj;
+
+        function init() {
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x90119e);
+
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+            camera.rotation.set(0, 0, 0);
+            camera.position.set(0, 100, 500);
+
+
+            //controls = new OrbitControls(camera);
+            //controls.addEventListener('change', renderer);
+            //light = new THREE.PointLight(0xffffff, 1, 500);
+            light = new THREE.HemisphereLight(0xffffff, 0, 2);
+            light.position.set(0, 0, 0);
+            scene.add(light);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            loader = new GLTFLoader();
+            loader.load('hocky/scene.gltf', function (gltf) {
+                obj = gltf.scene;
+                obj.scale.set(1, 1, 1);
+                obj.rotation.y += 0.05;
+                scene.add(gltf.scene);
+                animate();
+            }, undefined, function (error) {
+                console.error(error);
+            });
+        }
+        function animate() {
+            obj.rotation.y += 0.01;
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+        init();
+    </script>
+</body>
+
+</html>
