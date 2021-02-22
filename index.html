@@ -151,15 +151,54 @@
           <h2 style="text-align: center;">
             DASHBOARD page under construction soon will be ready
           </h2>
-           <fbox>
+          <fbox>
 
             <p style="background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em;">
-              
-              <!--<iframe src="/threeJS/index.html" with="1024px" height="768px" ></iframe>-->
-              <iframe width="600px" height= "400px" src= "/threeJS/index.html" frameborder= "0" marginwidth= "0" marginheight= "0" 
-              style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-            </p>
 
+            </p>
+            <script src="three.js"></script>
+            <script type="module" src="GLTFLoader.js"></script>
+            <script type="module">
+              import { GLTFLoader } from "./GLTFLoader.js";
+
+              var scene, camera, renderer, controls, text, light, loader, obj;
+
+              function init() {
+
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xac3c94);
+
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+                camera.rotation.set(0, 0, 0);
+                camera.position.set(0, 6, 12);
+
+                light = new THREE.HemisphereLight(0xffffff, 0, 2);
+                light.position.set(0, 0, 0);
+                scene.add(light);
+
+                renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                document.body.appendChild(renderer.domElement);
+
+                loader = new GLTFLoader();
+                loader.load('science_lab_lowpoly/scene.gltf', function (gltf) {
+                //loader.load('dream_computer_setup/scene.gltf', function (gltf) {
+                  obj = gltf.scene;
+                  obj.scale.set(0.9, 0.9, 0.9);
+                  obj.position.set(0,4,0);
+                  scene.add(gltf.scene);
+                  animate();
+                }, undefined, function (error) {
+                  console.error(error);
+                });
+              }
+              function animate() {
+                obj.rotation.y += 0.005;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+              }
+              init();
+            </script>
 
           </fbox>
 
@@ -177,8 +216,10 @@
               <br>
               <br>
               <br>
-              <iframe width="600px" height= "400px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcl38DxUQlhWNDJWT1pPRzJIQUs1Sk5DN1ZYTzk0OS4u&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" 
-                      style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+              <iframe width="600px" height="400px"
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcl38DxUQlhWNDJWT1pPRzJIQUs1Sk5DN1ZYTzk0OS4u&embed=true"
+                frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+                allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
               <!--I am Moe Azizi,-->
             </p>
 
@@ -193,7 +234,8 @@
             ABOUT
           </h2>
           <fbox>
-            <p style="background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em; padding-left: 0.5em; padding-right: 0.5em;">
+            <p
+              style="background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em; padding-left: 0.5em; padding-right: 0.5em;">
               <br>
               <br>
               <br>
@@ -230,13 +272,15 @@
           </h2>
           <fbox>
             <p style="text-align: center; margin-left: .5em; margin-right: 0.5em;">
-            <br>
-            <img src="images/jackson31.png" title="My me is Jackson" style="width:300px; height: auto; float: left;image-rendering: pixelated;">
+              <br>
+              <img src="images/jackson31.png" title="My me is Jackson"
+                style="width:300px; height: auto; float: left;image-rendering: pixelated;">
 
-            <iframe src="https://webchat.botframework.com/embed/Jackson?s=Zy0K0-lKfn4.0a6Jfwc_pL2JBizRyk6hNY33nPkGnhYAJp1uE7gPPBk"
-             style="min-width: 340px ; min-height: 510px; float: center; "></iframe>
-             </p>
-           </fbox>
+              <iframe
+                src="https://webchat.botframework.com/embed/Jackson?s=Zy0K0-lKfn4.0a6Jfwc_pL2JBizRyk6hNY33nPkGnhYAJp1uE7gPPBk"
+                style="min-width: 340px ; min-height: 510px; float: center; "></iframe>
+            </p>
+          </fbox>
 
         </section>
       </article>

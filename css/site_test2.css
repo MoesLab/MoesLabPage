@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #999;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+
+header{
+  background-color: rgb(172, 60, 147);
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
+  border-style: groove;
+}
+header img{
+  border-style: groove;
+}
+nav{
+  display: inline;
+  background-color: rgba(0, 0, 0, 0.33);
+  font-size: 20px;
+  text-align: center;
+
+}
+nav a{
+  text-decoration: none;
+  color:gainsboro;
+  padding-left: 8px;
+  padding-right: 10px;
+}
+h1 {
+  font-size: 3em;
+  margin-top: 0.5em;
+}
+
+.sectors{
+  margin-bottom: .5em;
+  border-bottom: groove;
+}
+
+.sectors h2{
+  color:black;
+  background-color: rgba(255, 20, 145, 0.397);
+}
+.sectors p{
+max-width: 482px;
+font-weight: bolder;
+}
+.sectors fbox{
+display:flex;
+flex-wrap: wrap;
+}
+.sectors p{
+  font-size: medium;
+  margin-right: .5em;
+  text-align: justify;
+}
+.sectors iframe{
+
+}
+
+
+main {
+  display: block;
+  background-image: url("images/background.png");
+  padding-top: 1em;
+  padding-bottom: 3em;
+  min-height: 85%;
+
+}
+article {
+  width: 93%; 
+  padding:2em;
+}
+
+footer {
+  border-style: groove;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.45);
+  height: auto;
+}
+footer p{
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
+
