@@ -10,13 +10,34 @@
 </head>
 
 <body>
-
+    <!--
     <script src="three.js"></script>
-    <script type="module" src="GLTFLoader.js"></script>
+    <script type="module" src="GLTFLoader.js"></script> -->
+
     <script type="module">
+
+        import * as THREE from "./three.module.js";
         import { GLTFLoader } from "./GLTFLoader.js";
+        //import { OrbitControls } from "./OrbitControls.js";
+        import { GUI } from "./dat.gui.module.js";
+        //import { CSM }           from "./CSM.js";
+        //import { CSMHelper }     from "./CSMHelper.js";
 
         var scene, camera, renderer, controls, text, light, loader, obj;
+        const params = {
+            link: false,
+            accelrange: '8 G',
+            gyrorange: '500 °',
+            filterbandwidth: '21 Hz',
+            accel_x: 0,
+            accel_y: 0,
+            accel_z: 0,
+            rot_x: 0,
+            rot_y: 0,
+            rot_z: 0,
+            temp: 20,
+            batt: 4,
+        };
 
         function init() {
 
@@ -34,7 +55,7 @@
             light = new THREE.HemisphereLight(0xffffff, 0, 2);
             light.position.set(0, 0, 0);
             scene.add(light);
-  
+
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
@@ -51,6 +72,53 @@
                 console.error(error);
             });
         }
+
+        
+
+        const gui = new GUI();
+
+        gui.add(params, 'link').name('LINK').onChange(function (value) {
+
+        });
+
+        gui.add(params, 'accelrange', ['2 G', '4 G', '8 G', '16 G']).name('ACCEL RANGE').onChange(function (value) {
+            params.accelrange = value;
+        });
+
+        gui.add(params, 'gyrorange', ['250 °', '500 °', '1000 °', '2000 °']).name('GYRO RANGE').onChange(function (value) {
+            params.gyrorange = value;
+        });
+
+        gui.add(params, 'filterbandwidth', ['187 Hz', '94 Hz', '44 Hz', '21 Hz', '10 Hz', '5 Hz']).name('FILTER BANDWIDTH').onChange(function (value) {
+            params.filterbandwidth = value;
+        });
+
+        gui.add(params, 'accel_x', -8, 8).step(1).name('ACCEL_X').onChange(function (value) {
+
+        });
+        gui.add(params, 'accel_y', -8, 8).step(1).name('ACCEL_Y').onChange(function (value) {
+
+        });
+        gui.add(params, 'accel_z', -8, 8).step(1).name('ACCEL_Z').onChange(function (value) {
+
+        });
+        gui.add(params, 'rot_x', -360, 360).step(1).name('ROTATION_X').onChange(function (value) {
+
+        });
+        gui.add(params, 'rot_y', -360, 360).step(1).name('ROTATION_Y').onChange(function (value) {
+
+        });
+        gui.add(params, 'rot_z', -360, 360).step(1).name('ROTATION_Z').onChange(function (value) {
+
+        });
+        gui.add(params, 'temp', -40, 60).step(1).name('TEMPERATURE').onChange(function (value) {
+
+        });
+        gui.add(params, 'batt', 0, 5).step(1).name('BATTERY').onChange(function (value) {
+
+        });
+
+
         function animate() {
             obj.rotation.y += 0.01;
             renderer.render(scene, camera);
