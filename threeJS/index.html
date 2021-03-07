@@ -6,24 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Model</title>
+    <link rel="icon" href="hockyboot.png" type="png" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
+    <video id="video" style="display:none" autoplay playsinline></video>
     <!--
     <script src="three.js"></script>
     <script type="module" src="GLTFLoader.js"></script> -->
 
     <script type="module">
+        /*
+                import * as THREE from "./three.module.js";
+                import { GLTFLoader } from "./GLTFLoader.js";
+                //import { OrbitControls } from "./OrbitControls.js";
+                import { GUI } from "./dat.gui.module.js";
+                //import { CSM }           from "./CSM.js";
+                //import { CSMHelper }     from "./CSMHelper.js";
+        */
 
-        import * as THREE from "./three.module.js";
-        import { GLTFLoader } from "./GLTFLoader.js";
-        //import { OrbitControls } from "./OrbitControls.js";
-        import { GUI } from "./dat.gui.module.js";
-        //import { CSM }           from "./CSM.js";
-        //import { CSMHelper }     from "./CSMHelper.js";
+        import * as THREE from 'https://threejs.org/build/three.module.js';
 
-        var scene, camera, renderer, controls, text, light, loader, obj;
+        import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from 'https://threejs.org/examples/jsm/loaders/GLTFLoader.js';
+        import { GUI } from 'https://threejs.org/examples/jsm/libs/dat.gui.module.js';
+        import { TransformControls } from 'https://threejs.org/examples/jsm/controls/TransformControls.js';
+
+
+
+        var scene, camera, renderer, controls, text, light, loader, obj, video;
         const params = {
             link: false,
             accelrange: '8 G',
@@ -43,6 +55,7 @@
 
             scene = new THREE.Scene();
             scene.background = new THREE.Color(0x90119e);
+            scene.add(new THREE.GridHelper(1000, 10, 0x888888, 0x444444));
 
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
             camera.rotation.set(0, 0, 0);
@@ -56,6 +69,13 @@
             light.position.set(0, 0, 0);
             scene.add(light);
 
+            const axesHelper = new THREE.AxesHelper(100);
+            scene.add(axesHelper);
+
+            const sphere = new THREE.SphereGeometry(10);
+            const object = new THREE.Mesh(sphere, new THREE.MeshBasicMaterial(0xff0000));
+            const box = new THREE.BoxHelper(object, 0xffff00);
+            scene.add(box);
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
@@ -65,18 +85,22 @@
             loader.load('hocky/scene.gltf', function (gltf) {
                 obj = gltf.scene;
                 obj.scale.set(1, 1, 1);
-                obj.rotation.y += 0.05;
+               // obj.rotation.y += 0.05;
                 scene.add(gltf.scene);
                 animate();
             }, undefined, function (error) {
                 console.error(error);
             });
+
+            const controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render );
+				controls.target.set( 0, 1.2, 2 );
+				controls.update();
+
+				window.addEventListener( 'resize', onWindowResize );
         }
 
-        
-
         const gui = new GUI();
-
         gui.add(params, 'link').name('LINK').onChange(function (value) {
 
         });
@@ -95,6 +119,7 @@
 
         gui.add(params, 'accel_x', -8, 8).step(1).name('ACCEL_X').onChange(function (value) {
 
+
         });
         gui.add(params, 'accel_y', -8, 8).step(1).name('ACCEL_Y').onChange(function (value) {
 
@@ -103,13 +128,13 @@
 
         });
         gui.add(params, 'rot_x', -360, 360).step(1).name('ROTATION_X').onChange(function (value) {
-
+            obj.rotation.x = value  /360;
         });
         gui.add(params, 'rot_y', -360, 360).step(1).name('ROTATION_Y').onChange(function (value) {
-
+            obj.rotation.z = value  /360;
         });
         gui.add(params, 'rot_z', -360, 360).step(1).name('ROTATION_Z').onChange(function (value) {
-
+            obj.rotation.y = value  /180;
         });
         gui.add(params, 'temp', -40, 60).step(1).name('TEMPERATURE').onChange(function (value) {
 
@@ -117,10 +142,21 @@
         gui.add(params, 'batt', 0, 5).step(1).name('BATTERY').onChange(function (value) {
 
         });
+        ////////////////////////////////////////////////////Orbit Control
 
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            render();
+
+        }
 
         function animate() {
-            obj.rotation.y += 0.01;
+           // obj.rotation.y += 0.01;
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
         }
