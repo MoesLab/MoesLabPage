@@ -5,27 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model</title>
+    <title>MPU6050 Demo</title>
     <link rel="icon" href="hockyboot.png" type="png" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
     <video id="video" style="display:none" autoplay playsinline></video>
-    <!--
-    <script src="three.js"></script>
-    <script type="module" src="GLTFLoader.js"></script> -->
-
     <script type="module">
-        /*
-                import * as THREE from "./three.module.js";
-                import { GLTFLoader } from "./GLTFLoader.js";
-                //import { OrbitControls } from "./OrbitControls.js";
-                import { GUI } from "./dat.gui.module.js";
-                //import { CSM }           from "./CSM.js";
-                //import { CSMHelper }     from "./CSMHelper.js";
-        */
-
         import * as THREE from 'https://threejs.org/build/three.module.js';
 
         import { OrbitControls } from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
@@ -66,25 +53,12 @@
             light.position.set(0, 0, 0);
             scene.add(light);
 
-            //const axesHelper = new THREE.AxesHelper(100);
-            //scene.add(axesHelper);
-            /*
-                        const arrowdir = new THREE.Vector3(0, 0, 1);
-                        arrowdir.normalize();
-                        const arroworigin = new THREE.Vector3(0, 0, 0);
-                        const arrowlength = 200;
-                        const arrowcolor = 0x000000;
-                        const arrowHelper = new THREE.ArrowHelper(arrowdir, arroworigin, arrowlength, arrowcolor);
-                        scene.add(arrowHelper);
-            */
-
-            const sphere = new THREE.SphereGeometry(10);
-            const object = new THREE.Mesh(sphere, new THREE.MeshBasicMaterial(0xff0000));
-            const box = new THREE.BoxHelper(object, 0xffff00);
-            scene.add(box);
+            const axesHelper = new THREE.AxesHelper(120,10,10);
+            scene.add(axesHelper);
+            
 
             const XG = new THREE.ConeGeometry(5, 20, 32);
-            const XMesh = new THREE.Mesh(XG, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+            const XMesh = new THREE.Mesh(XG, new THREE.MeshBasicMaterial({ color: 0x000000 }));
             XMesh.rotation.x = 1.6;
             scene.add(XMesh);
             XMesh.position.set(0, 0, 20);
@@ -94,7 +68,7 @@
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(renderer.domElement);
-
+/*
             /////////////////////////////////////////////////////// load more memory
             loader = new GLTFLoader();
             loader.load('hocky/scene.gltf', function (gltf) {
@@ -106,15 +80,15 @@
             }, undefined, function (error) {
                 console.error(error);
             });
-/*
+*/
             //////////////////////////////////////////////////////Cube less memory
             const shape = new THREE.BoxGeometry(10,100,10);
-            const obj = new THREE.Mesh(shape, new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe : true, skinning: true}));
+            const obj = new THREE.Mesh(shape, new THREE.MeshBasicMaterial({color: 0xffffff, wireframe : false, skinning: true}));
             obj.position.set(0,50,0);
             scene.add(obj);
             animate();
             //////////////////////////////////////////////////////
-*/
+
             const controls = new OrbitControls(camera, renderer.domElement);
             controls.addEventListener('change', render);
             controls.target.set(0, 1.2, 2);
@@ -151,6 +125,7 @@
         });
         gui.add(params, 'rot_x', -360, 360).step(1).name('ROTATION_X').onChange(function (value) {
             obj.rotation.x = value / 360;
+            render();
         });
         gui.add(params, 'rot_y', -360, 360).step(1).name('ROTATION_Y').onChange(function (value) {
             obj.rotation.z = value / 360;
