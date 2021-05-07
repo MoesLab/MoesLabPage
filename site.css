@@ -64,7 +64,10 @@ nav a:active{
 #CONTACT{
   display: none;
 }
+.MEDIA_items{
 
+  padding-left:1em ;
+}
 h1 {
   font-size: 3em;
   margin-top: 0.5em;
