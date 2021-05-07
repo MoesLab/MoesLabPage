@@ -87,14 +87,13 @@ h1 {
 }
 .sectors p{
   background-color: rgba(231, 220, 220, 0.603);
-max-width: 482px;
-//font-weight: bolder;
-font-size: medium;
-padding-top: .5em;
-padding-bottom: 1em;
-padding-left: .5em;
-padding-right: .5em;
-text-align: justify;
+  max-width: 482px;
+  font-size: medium;
+  padding-top: .5em;
+  padding-bottom: 1em;
+  padding-left: .5em;
+  padding-right: .5em;
+  text-align: justify;
 }
 .sectors fbox{
 display:flex;
