@@ -10,7 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>MoesLab</title>
-  <link rel="icon" href="images/meter.png" type="png" />
+  <!-- <link rel="icon" href="images/meter.png" type="png" /> -->
+  <link rel="icon" href="images/moeslab_logo01.png" type="png" />
   <link rel="stylesheet" href="site.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
   <script>
@@ -42,13 +43,16 @@
 <body>
   <div class="container">
     <header>
+
       <div class="head">
+        <!--image 1-->
         <img src="images/Moe Azizi_color.png" title="My name is Moe Azizi " alt="Moe Azizi"
           style="width:150px;height:150px;border-radius:1em; align-items: left;" />
-
+        <!--image 2-->
         <img src="images/MoesLab_Robot.gif" title="Welcome to Moes Lab" alt="API ICON" align="right" style="width:185px;height:150px;border-radius:1em; align-items: right;
               -webkit-filter: grayscale(100%); filter: grayscale(100%); " />
       </div>
+
       <nav>
         <a href="#" onclick="Menu(1)">HIGHLIGHTS</a>
         <a href="#" onclick="Menu(2)">DASHBOARD</a>
@@ -58,11 +62,15 @@
       </nav>
 
     </header>
+    <!--content under Menu-->
     <main>
       <aside></aside>
       <!-- -------------------------------------------- HIGHLIGHTS-->
       <article id="HIGHLIGHTS" style="display: inline;">
         <section class="sectors">
+          <h1 style="text-align: left">
+            HIGHLIGHTS
+          </h1>
           <h2>
             IoT Demo 2020
           </h2>
@@ -149,6 +157,9 @@
       <!-- -------------------------------------------- DASHBOARD-->
       <article id="DASHBOARD" style="display: none;">
         <section class="DASHBOARD.sector">
+          <h1 style="text-align: left">
+            DASHBOARD
+          </h1>
           <h2 style="text-align: center;">
             DASHBOARD page under construction soon will be ready
           </h2>
@@ -183,10 +194,10 @@
 
                 loader = new GLTFLoader();
                 loader.load('science_lab_lowpoly/scene.gltf', function (gltf) {
-                //loader.load('dream_computer_setup/scene.gltf', function (gltf) {
+                  //loader.load('dream_computer_setup/scene.gltf', function (gltf) {
                   obj = gltf.scene;
                   obj.scale.set(0.9, 0.9, 0.9);
-                  obj.position.set(0,4,0);
+                  obj.position.set(0, 4, 0);
                   scene.add(gltf.scene);
                   animate();
                 }, undefined, function (error) {
@@ -209,50 +220,44 @@
       <!-- -------------------------------------------- MEDIA-->
       <article id="MEDIA" style="display: none;">
         <section class="MEDIA.sector">
-          <h2 style="text-align: center;">
-            MEDIA page is demostarting few projects related to Digital Media
-          </h2>
+          <h1 style="text-align: left">
+            MEDIA
+          </h1>
+          <!-- <h2 style="text-align: center;">
+            MEDIA page is demostarting few Digital Media projects
+          </h2> -->
           <fbox>
+
             <div class="MEDIA_items">
               <div>
-                  A CookBook designed by Adobe products
-                  (Illustrator, InDesign, Photoshop)
+                A CookBook designed by Adobe products
+                (Illustrator, InDesign, Photoshop)
               </div>
               <figure>
-                <a href="images/PersianCookBook.pdf" target="_blank"> 
-                <img width="90%" margine-left="auto" margin-right="auto" src="images/PersianCookBook.png" alt="4 Foremost Persian Stew" >
+                <a href="images/PersianCookBook.pdf" target="_blank">
+                  <img width="90%" margine-left="auto" margin-right="auto" src="images/PersianCookBook.png"
+                    alt="4 Foremost Persian Stew">
                 </a>
                 <figcaption>Press to brows PDF file in a new tab</figcaption>
               </figure>
             </div>
+
             <div class="MEDIA_items">
               <div>
-                  A CookBook designed by Adobe products
-                  (Illustrator, InDesign, Photoshop)
+                An Anim designed by Adobe products
+                (Illustrator, InDesign, Photoshop)
               </div>
               <figure>
-                <a href="images/PersianCookBook.pdf" target="_blank"> 
-                <img width="90%" margine-left="auto" margin-right="auto" src="images/PersianCookBook.png" alt="4 Foremost Persian Stew" >
-                </a>
-                <figcaption>Press to brows PDF file in a new tab</figcaption>
-              </figure>
-            </div>
-            <div class="MEDIA_items">
-              <div>
-                  An Anim designed by Adobe products
-                  (Illustrator, InDesign, Photoshop)
-              </div>
-              <figure>
-                  <video width="90%" margine-left="auto" margin-right="auto" controls>
-                    <source src="images/MoesLabArm.mp4" type="video/mp4">
-                     Laser cut Moes Lab logo
-                  </video>
+                <video width="90%" margine-left="auto" margin-right="auto" controls>
+                  <source src="images/MoesLabArm.mp4" type="video/mp4">
+                  Laser cut Moes Lab logo
+                </video>
                 <figcaption>Laser cut Moes Lab logo</figcaption>
               </figure>
             </div>
           </fbox>
-         
-              <!--        
+
+          <!--  
           <fbox>
             <p style="text-align: center;">
               <br>
@@ -272,19 +277,25 @@
       <!-- -------------------------------------------- ABOUT-->
       <article id="ABOUT" style="display: none;">
         <section class="ABOUT.sector">
-          <h2 style="text-align: center;">
+          <h1 style="text-align: left">
             ABOUT
-          </h2>
+          </h1>
           <fbox style="text-align: center;">
-            <p
-              style="background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 10em; padding-left: 0.5em; padding-right: 0.5em;">
-              <br>
-              <br>
+            <div style="background-color:  rgba(231, 220, 220, 0.75);">
+              <img src="images/moeslab_logo01.png" alt="MoesLab Icon" style="width:128px;height:128px;">
+              <h2>
+                MoesLab
+              </h2>
+            </div>
+            <p style="background-color:  rgba(231, 220, 220, 0.75); margin-left: 0em;margin-right: 0em; 
+              padding-left: 5em; padding-right: 5em;">
               <br>
               I am Moe Azizi and MoesLab is my playground and test bench for prototyping, testing, and manufacturing a
               variety of components related to the world of Automation and Mechatronic.
 
               I have extensive experience in a wide range of Software and Hardware design and development for IoT.
+              <br>
+              <br>
 
               This domain hosted in Github to showcase some of the related activities.
               These activities included but not limited to small scale low quantity PCB creation for different
@@ -296,18 +307,23 @@
               I welcome clients and people who are on the same page as me, I value the technology and hoping my small
               contributions help the community.
               <br>
+              <a href="mailto:azizimoe@gmail.com?Subject=E-mail" target="_blank" title="azizimoe@gmail.com">E-mail
+                me</a>
               <br>
+              <br>
+              <br>
+            <div style="text-align: center; background-color: black; color:rgb(172, 60, 147);">
               <span class="fab fa-linkedin fa-2x" style="color:  rgb(172, 60, 147);"></span>Linkedin
               <span class="fab fa-github   fa-2x" style="color:  rgb(172, 60, 147);"></span>Github
               <span class="fab fa-twitter  fa-2x" style="color:  rgb(172, 60, 147);"></span>Twitter
               <span class="fas fa-envelope fa-2x" style="color:  rgb(172, 60, 147);"></span>E-mail
-              <br>
-              <br>
-              <a href="mailto:azizimoe@gmail.com?Subject=E-mail" target="_blank" title="azizimoe@gmail.com">E-mail
-                me</a>
+            </div>
+            <br>
+            <br>
+
             </p>
             <p
-              style="align-items:right; background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em; padding-left: 0.5em; padding-right: 0.5em;">
+              style="align-items:right; display:none; background-color:  rgba(231, 220, 220, 0.603); margin-left: 1em;margin-right: 1em; padding-left: 0.5em; padding-right: 0.5em;">
               <span class="fab fa-linkedin fa-2x" style="color:  rgb(172, 60, 147);"></span>Linkedin<br>
               <span class="fab fa-github   fa-2x" style="color:  rgb(172, 60, 147);"></span>Github<br>
               <span class="fab fa-twitter  fa-2x" style="color:  rgb(172, 60, 147);"></span>Twitter<br>
@@ -318,6 +334,7 @@
 
         </section>
       </article>
+
       <!-- -------------------------------------------- CHATBOT-->
       <article id="CHATBOT" style="display: none;">
         <section class="CHATBOT.sector">
@@ -341,6 +358,7 @@
 
 
     </main>
+
     <footer>
       <p>
         Contact me if you are looking for a person with maker attitude I am
