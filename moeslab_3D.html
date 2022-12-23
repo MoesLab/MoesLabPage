@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Moe Azizi">
+  <meta name="description" content="Moes Lab activities">
+  <meta name="keywords"
+    content="Moe, Moe Azizi, MoesLab, Moes Lab, Iot, ERB, Electric Roller Boots, Crestron, Savant, Control4">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>MoesLab</title>
+  <!-- <link rel="icon" href="images/meter.png" type="png" /> -->
+  <link rel="icon" href="images/moeslab_logo01.png" type="png" />
+  <link rel="stylesheet" href="site.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
+  <script>
+
+  </script>
+  <noscript>Sorry, your browser does not support JavaScript!</noscript>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+      <script src="three.js"></script>
+      <script type="module" src="GLTFLoader.js"></script>
+      <script type="module">
+        import { GLTFLoader } from "./GLTFLoader.js";
+
+        var scene, camera, renderer, controls, text, light, loader, obj;
+
+        function init() {
+
+          scene = new THREE.Scene();
+          scene.background = new THREE.Color(0xac3c94);
+
+          camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+          camera.rotation.set(0, 0, 0);
+          camera.position.set(0, 6, 12);
+
+          light = new THREE.HemisphereLight(0xffffff, 0, 1.5);
+          light.position.set(0, 0, 0);
+          scene.add(light);
+
+          renderer = new THREE.WebGLRenderer({ antialias: true });
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          document.body.appendChild(renderer.domElement);
+
+          loader = new GLTFLoader();
+          loader.load('science_lab_lowpoly/scene.gltf', function (gltf) {
+            //loader.load('dream_computer_setup/scene.gltf', function (gltf) {
+            obj = gltf.scene;
+            obj.scale.set(0.9, 0.9, 0.9);
+            obj.position.set(0, 4, 0);
+            scene.add(gltf.scene);
+            animate();
+          }, undefined, function (error) {
+            console.error(error);
+          });
+        }
+        function animate() {
+          obj.rotation.y += 0.005;
+          renderer.render(scene, camera);
+          requestAnimationFrame(animate);
+        }
+        init();
+      </script>
+
+  </div>
+</body>
+
+</html>
