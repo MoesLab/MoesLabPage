@@ -82,7 +82,8 @@ nav a:active {
 }
 
 .MEDIA_items {
-  /* display: inline-block; */
+  /* display: inline-block; */ 
+  /* inline-block will sort items from buttom */
   display:inline-table;
   text-align: center;
   box-shadow: 10px 10px 8px #1c1c1c;
