@@ -1,0 +1,12 @@
+Hi There, I am Moe, and MoesLab is my playground and test bench for prototyping, testing, and manufacturing various components related to the world of Automation and Digital Media.
+
+  I gained practical skills and a knowledge base in Electronics and information technology which I like to use to create a wide range of Software and Hardware design and development for IoT.
+
+  I like being able to create a tactical solution to move data from point A to point B regardless of data type and physical distance.
+
+  This domain is hosted in GitHub to showcase some of the related projects and highlights my skills relevant to coding applications and building useful components with the use of microcontrollers and radio modules.
+
+  I never limit myself to any specific discipline in the sciences of electronics, logic, and mechanicals.
+
+  I welcome clients and people who are on the same page as me, I value technology and hope my small contributions help the community.
+  
