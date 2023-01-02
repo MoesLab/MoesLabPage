@@ -133,6 +133,10 @@ h1 {
   flex-wrap: wrap;
 }
 
+#SocialLinks{
+  color:  rgb(172, 60, 147);
+
+}
 
 main {
   display: block;
