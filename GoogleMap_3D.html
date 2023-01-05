@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Google Maps</title>
+  <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+  <style>
+  </style>
+
+</head>
+
+<body>
+  <div id="map">
+    This is old text!
+  </div>
+  <button type="button" onclick="myFunction()">Try it</button>
+
+  <script type="module">
+    import { Loader } from '@googlemaps/js-api-loader';
+    import * as THREE from 'three';
+    import { GLTFLoader } from "./GLTFLoader.js";
+  </script>
+
+  <script>
+    const apiOptions = {
+      "apiKey": 'AIzaSyDYGJm3HCAV21qPMGVgrtx1wkkET88wPGE',
+      "version": 'beta',
+      "map_ids": 'f02e973aa93da54c'
+    };
+    const mapOptions = {
+      "tilt": 0,
+      "heading": 0,
+      "zoom": 17,
+      "center": { lat: 43.689570, lng: -79.352050 },
+      "mapId": 'f02e973aa93da54c'
+    };
+    
+    async function initMap() {
+      const mapDiv = document.getElementById("map");
+      const apiLoader = new Loader(apiOptions);
+      await apiLoader.Load();
+      return new google.maps.Map(mapDiv, mapOptions);
+    };
+
+    (async () => {
+      const map = await initMap();
+      initWebglOverLayView(map);
+    })();
+
+
+    function myFunction() {
+      document.getElementById("map").innerHTML = "this is updated text";
+    };
+
+
+
+  </script>
+
+
+</body>
+
+</html>

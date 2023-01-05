@@ -6,11 +6,28 @@
 // Select the database to use.
 use('MoesLabDB');
 
-db.TorontoCityCameras.updateMany({},[
-    {
-        $addFields: {
-            Coordinates: ['$Longitude','$Latitude']
-            }
-    }
+// db.PersonelFake.updateMany({},[
+//     {
+//         $addFields: {
+//             // Coordinates: ['$Longitude','$Latitude']
+//             // Age: { $multiply: [ { $rand: {} }, 100 ] }
+//                Age: [100]
+//             }
+//         $set: {
+//             Age: Math.random()
+//             }
 
-]);
+//     }
+
+// ]);
+
+db.PersonelFake.updateMany({},[
+   {
+    $addFields:
+     {
+        //  Age: { $multiply: [ '$Age', 100 ]  }
+         Age: { $floor: "$Age" }
+         
+     }
+   }
+  ]);
